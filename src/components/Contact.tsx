@@ -116,11 +116,11 @@ export function Contact() {
                     <option value="90min">90 Minutes</option>
                     <option value="2hours">2 Hours</option>
                     <option value="3hours">3 Hours</option>
-                    <option value="dinner">Dinner Date (4 hrs)</option>
+                    <option value="dinner">Dinner Event (4 hrs)</option>
                     <option value="evening">Evening (6 hrs)</option>
-                    <option value="overnight">Overnight (12 hrs)</option>
-                    <option value="fullday">Full Day (24 hrs)</option>
-                    <option value="weekend">Weekend (48 hrs)</option>
+                    <option value="overnight">Full-Day (12 hrs)</option>
+                    <option value="fullday">Travel (24 hrs)</option>
+                    <option value="weekend">Extended (48 hrs)</option>
                   </select>
                 </div>
                 <div>
