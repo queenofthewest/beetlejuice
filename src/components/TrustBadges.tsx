@@ -35,7 +35,7 @@ export function TrustBadges() {
                   Reviews at
                 </span>
                 <span
-                  className="font-['Helvetica',_sans-serif] text-lg font-medium italic text-sand-soft md:text-2xl"
+                  className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft md:text-2xl"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
                   {b.name}
