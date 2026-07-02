@@ -22,9 +22,11 @@ function Index() {
         <Hero />
         <div className="bg-sand-deep">
           <About />
-          <Profile />
         </div>
         <Gallery />
+        <div className="bg-sand-deep">
+          <Profile />
+        </div>
         <Booking />
         <FeatureImage
           variant="one"

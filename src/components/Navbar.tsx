@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 
 const links = [
   { id: "about", label: "Meet Victoria" },
-  { id: "profile", label: "Statistics" },
   { id: "portfolio", label: "Gallery" },
-  { id: "booking", label: "Investment" },
-  { id: "policies", label: "Etiquette" },
+  { id: "profile", label: "Statistics" },
+  { id: "booking", label: "Consideration" },
   { id: "contact", label: "Booking" },
 ];
 

@@ -17,7 +17,6 @@ const etiquette = [
   "Details of our time together are not discussed in written communications.",
   "Cancellations within 24 hours incur a $200 fee. No-shows are blacklisted.",
   "A deposit may or may not be required. Please inquire.",
-  "Time extensions are welcome upon availability at +$500/hr.",
 ];
 
 const extended = [
@@ -26,6 +25,7 @@ const extended = [
   "Deposits are accepted via Bitcoin, CashApp, or Airline/Rideshare Gift Cards (FMTY only).",
   "Dates 4+ hours require a deposit and a dinner reservation.",
   "For overnights, I require at least 7 hours of uninterrupted sleep.",
+  "Time extensions are welcome upon availability at +$500/hr.",
 ];
 
 function CardHeader({ label, title }: { label: string; title: string }) {
