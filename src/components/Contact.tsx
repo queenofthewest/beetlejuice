@@ -46,12 +46,12 @@ const verifyOptions = [
   {
     id: "id",
     label: "Government ID",
-    placeholder: "Please be ready with two forms of photo ID (one gov't) + a selfie holding both",
+    placeholder: "Please list the two forms of photo ID you will submit and be ready to send a photo of you holding them up",
   },
   {
     id: "p411",
     label: "P411",
-    placeholder: "Please send me a request through P411 to be verified.",
+    placeholder: "Please type your P411 handle and submit a request through P411",
   },
 ] as const;
 

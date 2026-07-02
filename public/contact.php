@@ -95,9 +95,16 @@ $durationLabels = [
     "weekend" => "Weekend (48 hrs)",
     "custom" => "Custom Request",
 ];
+$verificationLabels = [
+    "employment" => "Employment + Photo ID",
+    "references" => "Provider References",
+    "id" => "Government ID",
+    "p411" => "P411",
+];
 
 $dateTypeLabel = $dateTypeLabels[$locationType] ?? "-";
 $durationLabel = $durationLabels[$duration] ?? "-";
+$verificationLabel = $verificationLabels[$verificationType] ?? "-";
 
 $formattedDate = "-";
 if ($date !== "") {
@@ -123,7 +130,7 @@ $body .= "Duration: $durationLabel\n";
 if ($durationDetail !== "") {
     $body .= "Duration detail:\n$durationDetail\n";
 }
-$body .= "Verification method: " . ($verificationType !== "" ? $verificationType : "-") . "\n";
+$body .= "Verification method: $verificationLabel\n";
 $body .= "Verification details:\n" . $verificationDetail . "\n";
 
 $state["last"] = $now;
