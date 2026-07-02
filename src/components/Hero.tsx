@@ -29,7 +29,6 @@ export function Hero() {
         >
           Victoria West
         </h1>
-        <div className="terra-divider my-6 w-40 mx-auto md:mx-0" />
       </div>
 
       {/* Badges — bottom center */}
