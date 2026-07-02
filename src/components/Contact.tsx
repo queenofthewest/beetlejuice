@@ -97,7 +97,10 @@ export function Contact() {
     try {
       const res = await fetch("/contact.php", { method: "POST", body: formData });
       const result = await res.json().catch(() => ({ ok: false }));
-      if (!res.ok || !result.ok) throw new Error(result.error || "Failed to send");
+      if (!res.ok || !result.ok) {
+        const detail = result.debug ? ` (${result.debug})` : "";
+        throw new Error((result.error || "Failed to send") + detail);
+      }
       form.reset();
       setVerification("employment");
       setLocationType("");
