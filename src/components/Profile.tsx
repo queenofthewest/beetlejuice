@@ -3,8 +3,10 @@ import { Reveal } from "@/components/Reveal";
 const stats = [
   { label: "Age", value: "37" },
   { label: "Height", value: "5'7\"" },
+  { label: "Measurements", value: "28\" Waist 38\" Hips" },
   { label: "Bust", value: "34B Natural" },
   { label: "Shoe", value: "US 7.5" },
+  { label: "Style", value: "70s Retro Glam" },
   { label: "Eyes", value: "Blue" },
   { label: "Hair", value: "Blonde / Brown" },
   { label: "Beverage", value: "Sparkling Water" },
@@ -18,7 +20,7 @@ const stats = [
 export function Profile() {
   return (
     <section id="profile" className="relative overflow-hidden bg-sand-deep py-12 md:py-16">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 md:grid-cols-[30%_70%]">
+      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:px-10 md:grid-cols-[40%_60%]">
 
         {/* Stat list — first on mobile, first on desktop */}
         <Reveal className="order-1 md:order-1">
