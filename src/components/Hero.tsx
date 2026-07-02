@@ -1,7 +1,7 @@
 import { TrustBadges } from "@/components/TrustBadges";
 
-const textShadowSmall = "0 1px 3px rgba(0,0,0,0.85), 0 1px 2px rgba(0,0,0,0.9)";
-const textShadowLarge = "0 2px 4px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9)";
+const textShadowSmall = "0 1px 4px rgba(0,0,0,0.7)";
+const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
 
 export function Hero() {
   return (

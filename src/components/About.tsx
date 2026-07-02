@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 
-const about = "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_9.webp";
+const about = "/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_9_v2.webp";
 
 export function About() {
   return (
