@@ -41,7 +41,7 @@ export function About() {
                 If you're looking for something transactional, I'm not the right fit. But if you want warmth, unhurried conversation, and the rare pleasure of feeling truly at ease — I think we'll get along beautifully.
               </p>
             </div>
-            <p className="mt-6 font-display text-xl italic text-terracotta/80 md:mt-8 md:text-2xl">— Victoria</p>
+            <p className="mt-6 font-display text-2xl italic text-terracotta md:mt-8 md:text-3xl">~ Victoria</p>
           </div>
         </Reveal>
       </div>
