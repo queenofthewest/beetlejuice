@@ -25,6 +25,11 @@ jobs:
       - name: Build
         run: bunx vite build
 
+      - name: Write SMTP config
+        run: node scripts/write-smtp-config.mjs
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:

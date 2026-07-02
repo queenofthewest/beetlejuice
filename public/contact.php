@@ -1,6 +1,8 @@
 <?php
 header("Content-Type: application/json");
 
+require __DIR__ . "/smtp-mailer.php";
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo json_encode(["ok" => false, "error" => "Method not allowed"]);
@@ -69,10 +71,6 @@ if ($name === "" || $email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) 
     exit;
 }
 
-$host = clean($_SERVER["HTTP_HOST"] ?? "victoriawest.com");
-$fromDomain = preg_replace("/^www\./", "", $host);
-$from = "no-reply@" . $fromDomain;
-
 $subject = "New Booking Inquiry — $name";
 
 $body = "New booking inquiry received:\n\n";
@@ -91,20 +89,24 @@ if ($durationDetail !== "") {
 $body .= "Verification method: " . ($verificationType !== "" ? $verificationType : "-") . "\n";
 $body .= "Verification details:\n" . $verificationDetail . "\n";
 
-$headers = [];
-$headers[] = "From: $from";
-$headers[] = "Reply-To: $email";
-$headers[] = "Content-Type: text/plain; charset=UTF-8";
-
 $state["last"] = $now;
 $state["count"] += 1;
 file_put_contents($rateFile, json_encode($state));
 
-$sent = mail($to, $subject, $body, implode("\r\n", $headers));
+$configPath = __DIR__ . "/smtp-config.php";
+if (!is_file($configPath)) {
+    http_response_code(500);
+    echo json_encode(["ok" => false, "error" => "Mail is not configured on the server."]);
+    exit;
+}
+$smtpConfig = require $configPath;
+
+[$sent, $smtpError] = smtp_send($smtpConfig, $to, $smtpConfig["user"], $email, $subject, $body);
 
 if ($sent) {
     echo json_encode(["ok" => true]);
 } else {
     http_response_code(500);
+    error_log("Contact form SMTP error: " . $smtpError);
     echo json_encode(["ok" => false, "error" => "Failed to send"]);
 }
