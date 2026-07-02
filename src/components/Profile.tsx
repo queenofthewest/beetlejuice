@@ -47,7 +47,7 @@ export function Profile() {
           <div className="relative mx-auto w-full">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[1.5rem] border border-terracotta/30" />
             <img
-              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16.webp"
+              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_WEB_16_v2.webp"
               alt="Victoria West"
               loading="lazy"
               width={800}
