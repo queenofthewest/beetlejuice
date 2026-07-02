@@ -29,16 +29,13 @@ export function About() {
             </h2>
             <div className="mt-6 space-y-4 font-serif text-base leading-relaxed text-espresso/65 md:mt-8 md:space-y-4 md:text-base lg:text-lg lg:leading-relaxed">
               <p>
-                It's lovely to meet you. My name is Victoria and I am a Southern California transplant in the beautiful desert of Arizona I now call my home. Let me tell you a little bit about myself.   
+                It's lovely to meet you. My name is Victoria and I am a Southern California transplant in the beautiful desert of Arizona I now call my home. Let me tell you a little bit about myself.
               </p>
               <p>
-               I move at a slow pace by nature. I ask real questions and I remember the answers. I believe the most memorable connections happen in the in-between moments — a comfortable silence, a shared laugh, the kind of ease that can't be manufactured.
+                I'm a private person — I keep my circle small, my volume low, and my life filled with doing things I enjoy. I'm an entrepreneur, always building something new and chasing the next idea that catches my interest. I'm rarely still for long. The world is my playground and traveling is how I fill my cup. My favorite dates are the ones where we try something new together — light-hearted, a little unexpected, the kind that turns into a good story later.
               </p>
               <p>
-                I keep my calendar intentionally light because I think genuine presence is a gift worth protecting — for both of us. No rushing, no performance, just two people genuinely enjoying each other's company.
-              </p>
-              <p>
-                If you're looking for something transactional, I'm not the right fit. But if you want warmth, unhurried conversation, and the rare pleasure of feeling truly at ease — I think we'll get along beautifully.
+                I'm warm, easygoing, and I show up as myself. If what I've described sounds like your kind of energy, I'd love to hear from you.
               </p>
             </div>
             <p className="mt-6 font-display text-2xl italic text-terracotta md:mt-8 md:text-3xl">~ Victoria</p>
