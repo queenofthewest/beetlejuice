@@ -32,7 +32,7 @@ export function Hero() {
       </div>
 
       {/* Badges — bottom center */}
-      <div className="absolute z-10 bottom-28 left-0 right-0 flex justify-center md:bottom-12">
+      <div className="absolute z-10 bottom-20 left-0 right-0 flex justify-center md:bottom-12">
         <TrustBadges />
       </div>
     </section>
