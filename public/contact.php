@@ -71,18 +71,55 @@ if ($name === "" || $email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL) 
     exit;
 }
 
-$subject = "New Booking Inquiry — $name";
+$dateTypeLabels = [
+    "phoenix-incall" => "Phoenix Local - Incall",
+    "phoenix-outcall" => "Phoenix Local - Outcall",
+    "touring" => "Touring Request",
+    "flytome" => "Fly Me To You (4+ hrs)",
+];
+$dateTypeSubjectLabels = [
+    "phoenix-incall" => "Phoenix - Incall",
+    "phoenix-outcall" => "Phoenix - Outcall",
+    "touring" => "Touring Request",
+    "flytome" => "FMTY",
+];
+$durationLabels = [
+    "1hour" => "1 Hour",
+    "90min" => "90 Minutes",
+    "2hours" => "2 Hours",
+    "3hours" => "3 Hours",
+    "dinner" => "Dinner Date (4 hrs)",
+    "evening" => "Evening (6 hrs)",
+    "overnight" => "Overnight (12 hrs)",
+    "fullday" => "Full Day (24 hrs)",
+    "weekend" => "Weekend (48 hrs)",
+    "custom" => "Custom Request",
+];
+
+$dateTypeLabel = $dateTypeLabels[$locationType] ?? "-";
+$durationLabel = $durationLabels[$duration] ?? "-";
+
+$formattedDate = "-";
+if ($date !== "") {
+    $dateObj = DateTime::createFromFormat("Y-m-d", $date);
+    if ($dateObj) {
+        $formattedDate = $dateObj->format("l, F j, Y");
+    }
+}
+
+$subjectType = $dateTypeSubjectLabels[$locationType] ?? $dateTypeLabel;
+$subject = "New Booking Inquiry — " . ($subjectType !== "-" ? $subjectType : $name);
 
 $body = "New booking inquiry received:\n\n";
 $body .= "Name: $name\n";
 $body .= "Email: $email\n";
 $body .= "Phone: " . ($phone !== "" ? $phone : "-") . "\n";
-$body .= "Preferred date: " . ($date !== "" ? $date : "-") . "\n";
-$body .= "Location: " . ($locationType !== "" ? $locationType : "-") . "\n";
+$body .= "Preferred date: $formattedDate\n";
+$body .= "Date Type: $dateTypeLabel\n";
 if ($locationDetail !== "") {
-    $body .= "Location detail: $locationDetail\n";
+    $body .= "Location: $locationDetail\n";
 }
-$body .= "Duration: " . ($duration !== "" ? $duration : "-") . "\n";
+$body .= "Duration: $durationLabel\n";
 if ($durationDetail !== "") {
     $body .= "Duration detail:\n$durationDetail\n";
 }
@@ -108,7 +145,5 @@ if ($sent) {
 } else {
     http_response_code(500);
     error_log("Contact form SMTP error: " . $smtpError);
-    // TEMP DEBUG: surfacing the real SMTP error to diagnose the send failure.
-    // Remove the "debug" field once this is confirmed working.
-    echo json_encode(["ok" => false, "error" => "Failed to send", "debug" => $smtpError]);
+    echo json_encode(["ok" => false, "error" => "Failed to send"]);
 }

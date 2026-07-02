@@ -97,11 +97,7 @@ export function Contact() {
     try {
       const res = await fetch("/contact.php", { method: "POST", body: formData });
       const result = await res.json().catch(() => ({ ok: false }));
-      if (!res.ok || !result.ok) {
-        // TEMP DEBUG: include server-side SMTP detail until send is confirmed working.
-        const detail = result.debug ? ` (${result.debug})` : "";
-        throw new Error((result.error || "Failed to send") + detail);
-      }
+      if (!res.ok || !result.ok) throw new Error(result.error || "Failed to send");
       form.reset();
       setVerification("employment");
       setLocationType("");
@@ -167,7 +163,7 @@ export function Contact() {
                   <input id="date" name="date" type="date" className={inputClass} />
                 </div>
                 <div>
-                  <label className={labelClass} htmlFor="locationType">Location</label>
+                  <label className={labelClass} htmlFor="locationType">Date Type</label>
                   <select
                     id="locationType"
                     name="locationType"
