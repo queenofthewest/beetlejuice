@@ -74,8 +74,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+function Root() {
+  return (
+    <div onContextMenu={(e) => e.preventDefault()}>
+      <Outlet />
+    </div>
+  );
+}
+
 export const Route = createRootRoute({
-  component: () => <Outlet />,
+  component: Root,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });

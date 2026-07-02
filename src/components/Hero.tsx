@@ -1,11 +1,8 @@
 import { TrustBadges } from "@/components/TrustBadges";
 
-const portrait = "/assets/victoria-hero.webp";
-
 export function Hero() {
   return (
     <section id="hero" className="relative w-full overflow-hidden pb-20 bg-sand">
-      {/* Warm radial glow behind portrait */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
@@ -13,7 +10,6 @@ export function Hero() {
             "radial-gradient(ellipse 55% 60% at 50% 50%, oklch(0.90 0.04 72) 20%, transparent 80%)",
         }}
       />
-      {/* Top/bottom fade */}
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-sand/60 via-transparent to-sand" />
 
       <div className="relative z-10 mx-auto w-full max-w-2xl px-6 pt-28 pb-20 text-center md:max-w-4xl md:pt-32">
@@ -25,16 +21,21 @@ export function Hero() {
         </h1>
         <div className="terra-divider mx-auto my-6 w-40" />
 
-        {/* Portrait */}
         <div className="relative mx-auto mt-10 w-full max-w-lg md:max-w-2xl">
           <div className="absolute inset-0 -translate-x-3 translate-y-3 rounded-[2rem] border border-terracotta/30" />
-          <img
-            src={portrait}
-            alt="Victoria West, Arizona luxury companion"
-            width={1024}
-            height={1280}
-            className="relative aspect-[3/4] max-h-[75vh] w-full rounded-[2rem] object-cover shadow-2xl shadow-espresso/20 md:aspect-auto md:max-h-[85vh]"
-          />
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_3.webp"
+            />
+            <img
+              src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_5.webp"
+              alt="Victoria West"
+              width={1024}
+              height={1280}
+              className="relative aspect-[3/4] max-h-[75vh] w-full rounded-[2rem] object-cover shadow-2xl shadow-espresso/20 md:aspect-auto md:max-h-[85vh]"
+            />
+          </picture>
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
