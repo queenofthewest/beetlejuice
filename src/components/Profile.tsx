@@ -3,13 +3,16 @@ import { Reveal } from "@/components/Reveal";
 const stats = [
   { label: "Age", value: "37" },
   { label: "Height", value: "5'7\"" },
-  { label: "Bust", value: "34\" Natural" },
+  { label: "Bust", value: "34B Natural" },
   { label: "Shoe", value: "US 7.5" },
   { label: "Eyes", value: "Blue" },
   { label: "Hair", value: "Blonde / Brown" },
   { label: "Beverage", value: "Sparkling Water" },
   { label: "Cuisine", value: "Japanese / Mexican" },
   { label: "Color", value: "Red" },
+  { label: "Flower", value: "Sunflowers" },
+  { label: "Scents", value: "Rose, Ylang Ylang, Palo Santo" },
+  { label: "Brands", value: "Honey Birdette, Classic Rock Couture" },
 ];
 
 export function Profile() {
