@@ -108,5 +108,7 @@ if ($sent) {
 } else {
     http_response_code(500);
     error_log("Contact form SMTP error: " . $smtpError);
-    echo json_encode(["ok" => false, "error" => "Failed to send"]);
+    // TEMP DEBUG: surfacing the real SMTP error to diagnose the send failure.
+    // Remove the "debug" field once this is confirmed working.
+    echo json_encode(["ok" => false, "error" => "Failed to send", "debug" => $smtpError]);
 }
