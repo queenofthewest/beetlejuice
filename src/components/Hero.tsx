@@ -16,7 +16,7 @@ export function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
 
       {/* Eyebrow + h1 — lower on mobile (near badges), left-anchored on desktop */}
-      <div className="absolute z-10 bottom-40 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[6%] md:right-auto md:px-0 md:text-left">
+      <div className="absolute z-10 bottom-40 left-0 right-0 px-6 text-center md:bottom-auto md:top-[20%] md:left-[14%] md:right-auto md:px-0 md:text-left">
         <p
           className="mb-5 text-xs uppercase tracking-[0.35em] text-sand-soft"
           style={{ textShadow: textShadowSmall }}
@@ -24,7 +24,7 @@ export function Hero() {
           Traveling Luxury Companion
         </p>
         <h1
-          className="font-display text-4xl leading-[1.02] tracking-tight text-sand-soft sm:text-5xl md:text-4xl lg:text-5xl"
+          className="font-display text-4xl leading-[1.02] tracking-tight text-sand-soft sm:text-5xl md:text-5xl"
           style={{ textShadow: textShadowLarge }}
         >
           Victoria West

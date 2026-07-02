@@ -23,8 +23,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-sand/90 backdrop-blur-md py-3 shadow-lg shadow-espresso/10 border-b border-terracotta/15"
-          : "py-6"
+          ? "bg-sand/90 backdrop-blur-md py-3 shadow-lg shadow-espresso/10 border-b border-terracotta/15 opacity-100"
+          : "py-6 opacity-0 pointer-events-none"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6">

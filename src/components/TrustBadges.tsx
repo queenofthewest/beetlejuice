@@ -32,7 +32,7 @@ export function TrustBadges() {
                   Read review at
                 </span>
                 <span
-                  className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft sm:text-xl md:text-2xl"
+                  className="font-['Helvetica',_sans-serif] text-lg italic text-sand-soft md:text-2xl"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
                   {b.name}
@@ -45,7 +45,7 @@ export function TrustBadges() {
                 loading="lazy"
                 width={112}
                 height={112}
-                className="h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+                className="h-16 w-16 object-contain md:h-24 md:w-24"
               />
             );
           return (
