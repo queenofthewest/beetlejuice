@@ -111,11 +111,14 @@ export function Gallery() {
         ))}
       </div>
 
-      {/* Masonry columns — 2:3 portrait crop on mobile, natural aspect ratios from md up */}
+      {/* Staggered 2-col grid on mobile (uniform 2:3 crop), masonry columns from md up */}
       <div className="px-4 sm:px-6">
-        <div className="columns-2 gap-2 sm:gap-3 md:columns-3 lg:columns-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:block md:columns-3 lg:columns-4">
           {images.map((img, i) => (
-            <div key={img.title} className="mb-2 break-inside-avoid sm:mb-3">
+            <div
+              key={img.title}
+              className={`break-inside-avoid md:mb-3 ${i % 2 === 1 ? "mt-8 md:mt-0" : ""}`}
+            >
               <button
                 onClick={() => setActive(i)}
                 className="group relative block w-full overflow-hidden rounded-lg border border-terracotta/15 transition-all duration-300 hover:border-terracotta/50"
