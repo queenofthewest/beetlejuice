@@ -5,12 +5,12 @@ const textShadowLarge = "0 2px 6px rgba(0,0,0,0.55)";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative h-[85vh] w-full overflow-hidden md:min-h-screen">
+    <section id="hero" className="relative h-[92vh] w-full overflow-hidden md:min-h-screen">
       <img
         src="/assets/images/las-vegas/ISEESEXY_VictoriaWest_Jun23_3.webp"
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-bottom md:object-[50%_65%]"
+        className="absolute inset-0 h-full w-full object-cover object-top md:object-[50%_65%]"
       />
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-sand to-transparent" />
