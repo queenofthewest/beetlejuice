@@ -14,6 +14,38 @@ function clean($value) {
     return str_replace(["\r", "\n"], " ", $value);
 }
 
+// Rate limit: one submission per 30s, max 10 per day, per IP
+$ip = $_SERVER["REMOTE_ADDR"] ?? "unknown";
+$rateDir = sys_get_temp_dir() . "/vw_contact_rl";
+if (!is_dir($rateDir)) {
+    mkdir($rateDir, 0700, true);
+}
+$rateFile = $rateDir . "/" . md5($ip) . ".json";
+
+$now = time();
+$state = ["last" => 0, "day" => date("Y-m-d"), "count" => 0];
+if (is_file($rateFile)) {
+    $decoded = json_decode(file_get_contents($rateFile), true);
+    if (is_array($decoded)) {
+        $state = array_merge($state, $decoded);
+    }
+}
+if ($state["day"] !== date("Y-m-d")) {
+    $state["day"] = date("Y-m-d");
+    $state["count"] = 0;
+}
+
+if ($now - $state["last"] < 30) {
+    http_response_code(429);
+    echo json_encode(["ok" => false, "error" => "Please wait a moment before submitting again."]);
+    exit;
+}
+if ($state["count"] >= 10) {
+    http_response_code(429);
+    echo json_encode(["ok" => false, "error" => "Daily submission limit reached. Please email directly."]);
+    exit;
+}
+
 $name = clean($_POST["name"] ?? "");
 $email = clean($_POST["email"] ?? "");
 $phone = clean($_POST["phone"] ?? "");
@@ -61,6 +93,10 @@ $headers = [];
 $headers[] = "From: $from";
 $headers[] = "Reply-To: $email";
 $headers[] = "Content-Type: text/plain; charset=UTF-8";
+
+$state["last"] = $now;
+$state["count"] += 1;
+file_put_contents($rateFile, json_encode($state));
 
 $sent = mail($to, $subject, $body, implode("\r\n", $headers));
 

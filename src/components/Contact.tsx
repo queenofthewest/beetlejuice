@@ -87,8 +87,9 @@ export function Contact() {
       setVerification("employment");
       setLocationType("");
       toast.success("Inquiry received — I'll respond within 48 hours.");
-    } catch {
-      toast.error("Something went wrong sending your inquiry. Please try emailing directly.");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Something went wrong sending your inquiry. Please try emailing directly.";
+      toast.error(message);
     } finally {
       setSubmitting(false);
     }
