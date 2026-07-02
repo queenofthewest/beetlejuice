@@ -21,7 +21,7 @@ export function About() {
         </Reveal>
 
         <Reveal delay={150}>
-          <div className="mx-4 md:mx-0 md:pl-6 md:max-h-[600px] md:overflow-hidden">
+          <div className="mx-4 md:mx-0 md:pl-6">
             <div className="terra-divider mb-6 w-24" />
             <p className="mb-3 text-xs uppercase tracking-[0.3em] text-terracotta/80">Meet Victoria</p>
             <h2 className="font-display text-3xl text-espresso md:text-4xl lg:text-5xl">
