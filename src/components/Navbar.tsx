@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { id: "about", label: "Meet Victoria" },
+  { id: "about", label: "Meet Alyssa" },
   { id: "portfolio", label: "Gallery" },
   { id: "profile", label: "Statistics" },
   { id: "booking", label: "Consideration" },
@@ -35,7 +35,7 @@ export function Navbar() {
           }`}
           style={scrolled ? undefined : { textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
         >
-          V<span className={scrolled ? "text-espresso/60" : "text-sand-soft/70"}>W</span>
+          A<span className={scrolled ? "text-espresso/60" : "text-sand-soft/70"}>M</span>
         </a>
         <ul className="hidden items-center gap-8 md:flex">
           {links.map((l) => (

@@ -27,7 +27,7 @@ export function Hero() {
           className="font-display text-5xl leading-[1.02] tracking-tight text-sand-soft"
           style={{ textShadow: textShadowLarge }}
         >
-          Victoria West
+          Alyssa May
         </h1>
       </div>
 

@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-$to = "victoriawestvip@gmail.com";
+$to = "hi@alyssamay.ch";
 
 function clean($value) {
     $value = trim($value ?? "");

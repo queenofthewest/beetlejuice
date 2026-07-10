@@ -9,7 +9,7 @@ if (!pass) {
 const config = {
   host: "mail.infomaniak.com",
   port: 587,
-  user: "info@xovictoriawest.ch",
+  user: "hi@alyssamay.ch",
   pass,
 };
 
