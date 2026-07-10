@@ -1,5 +1,4 @@
 import { Outlet, Link, createRootRoute, useRouter } from "@tanstack/react-router";
-import { PasswordGate } from "@/components/PasswordGate";
 import "../styles.css";
 
 function NotFoundComponent() {
@@ -78,9 +77,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 function Root() {
   return (
     <div onContextMenu={(e) => e.preventDefault()}>
-      <PasswordGate>
-        <Outlet />
-      </PasswordGate>
+      <Outlet />
     </div>
   );
 }

@@ -20,18 +20,11 @@ const badges = [
   },
 ];
 
-export function TrustBadges({
-  exclude = [],
-  className = "mt-10",
-}: {
-  exclude?: string[];
-  className?: string;
-}) {
-  const visible = badges.filter((b) => !exclude.includes(b.name));
+export function TrustBadges() {
   return (
-    <Reveal className={className} delay={200}>
+    <Reveal className="mt-10" delay={200}>
       <div className="flex flex-nowrap items-center justify-center gap-4 sm:gap-6">
-        {visible.map((b) => {
+        {badges.map((b) => {
           const content =
             b.type === "text" ? (
               <div className="flex flex-col items-start text-left">
